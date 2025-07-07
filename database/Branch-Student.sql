@@ -26,6 +26,8 @@ values ('Vasanth','Need to achieve 800 orders','operations','in-progress','sep 3
 	('Sathish','Get trained in hasura','operations','in-progress','sep 31st 21'),
 	('Sathish','Get trained in hardware','operations','in-progress','sep 31st 21');
 
+insert into todo_app values ('Vasanth','Need to achieve 800 orders','operations','in-progress','2021-09-21')
+
 select 'name:'||name||',   task:'||task||',   category:'||category||',   status:'||status||',   due-date:'|| (TO_CHAR (due_date, 'Mon dd yyyy') )as result from todo_app;
 
 create or replace view user_task_count as select name, count(*) from todo_app group by name;
@@ -38,6 +40,16 @@ alter table todo_app add column due_date date;
 
 update todo_app set due_date='2021-09-30';
 
+update todo_app set category='IT' where name='Sathish';
+
+update todo_app set id=1 where name='Vasanth'
+
+update todo_app set id=2 where name='jay'
+
+update todo_app set id=3 where name='Sathish'
+
+delete from todo_app where due_date = '2021-09-21'
+	
 select * from todo_app;
 
 -- changes from vscode
